@@ -1,0 +1,271 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+
+    --radius: 0.5rem;
+
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+  }
+}
+
+@layer base {
+  @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Poppins", sans-serif;
+  }
+}
+
+/* ScrollBar Style */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #03045d;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #03045d !important;
+  border-radius: 1.375rem;
+}
+
+/* ============================== Custom Checkbox Styling ============================== */
+input[type="checkbox"].custom-checkbox {
+  appearance: none;
+  -webkit-appearance: none; /* For Safari */
+  width: 1.1rem;
+  height: 1.1rem;
+  border: 2px solid #8f8f8f;
+  border-radius: 0.25rem;
+  outline: none;
+  cursor: pointer;
+  transition: background-color 0.3s, border-color 0.3s;
+  background-color: #fff; /* Background color for unchecked state */
+  position: relative;
+  min-width: 1.1rem;
+  min-height: 1.1rem;
+}
+
+input[type="checkbox"].custom-checkbox:checked {
+  background-color: #3490dc; /* Background color for checked state */
+  border-color: #3490dc; /* Change border color when checked */
+}
+
+input[type="checkbox"].custom-checkbox:checked::before {
+  content: "";
+  display: block;
+  width: 0.5rem; /* Adjust the size of the tick */
+  height: 0.25rem; /* Adjust the thickness of the tick */
+  border-left: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+  transform: rotate(-45deg);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-origin: center;
+  transform: translate(-50%, -50%) rotate(-45deg);
+  transition: transform 0.3s;
+}
+
+input[type="checkbox"].custom-checkbox:focus {
+  outline: none;
+}
+
+input[type="checkbox"].custom-checkbox:disabled {
+  background-color: #f1f5f9; /* Disabled background color */
+  border-color: #e2e8f0; /* Disabled border color */
+  cursor: not-allowed;
+}
+
+input[type="checkbox"].error {
+  border-color: #eb3b3b !important; /* Change border color when checked */
+}
+/* ============================== Custom Checkbox Styling ============================== */
+
+/* ============================== style for input fieldset ============================== */
+
+.input {
+  border-radius: 4px;
+  font-size: 0.875rem;
+  outline: none;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  padding-top: 0.407rem;
+  padding-bottom: 0.407rem;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  border-width: 1px;
+  border-color: hsl(0, 0%, 80%);
+}
+
+.input:focus {
+  border-color: var(--primary);
+}
+
+.input:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+th {
+  font-size: 12px;
+  font-weight: 600 !important;
+  line-height: 16px;
+  letter-spacing: -0.2%;
+}
+
+@keyframes loading {
+  0% {
+    transform: translateX(-100%); /* Start from outside the left border */
+  }
+  50% {
+    transform: translateX(
+      calc(100% - 32px)
+    ); /* Move to the right edge minus space for both sides (16px each) */
+  }
+  100% {
+    transform: translateX(-100%); /* Return to outside the left border */
+  }
+}
+
+.animate-loading {
+  animation: loading 5s linear infinite;
+}
+
+.tox-tinymce-aux {
+  pointer-events: auto;
+}
+
+.preloader-wrapper {
+  position: relative;
+}
+
+.preloader-wrapper span {
+  width: 25px;
+  height: 25px;
+  position: relative;
+  background: #fff;
+  float: left;
+  margin-right: 10px;
+  border-radius: 50%;
+  animation-name: preloader;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+}
+
+.preloader-sm span {
+  width: 10px;
+  height: 10px;
+  margin-right: 3px;
+}
+
+.preloader-wrapper span:nth-child(1) {
+  animation-delay: 0.15s;
+}
+
+.preloader-wrapper span:nth-child(2) {
+  animation-delay: 0.3s;
+}
+
+.preloader-wrapper span:nth-child(3) {
+  animation-delay: 0.45s;
+}
+
+@keyframes preloader {
+  0% {
+    background-color: #03045d; /* Use secondary color */
+    transform: translateY(0);
+    box-shadow: 0 3px 3px #FFEEEB; /* Use secondary base color */
+  }
+
+  50% {
+    background-color: #fff; /* White during transition */
+    transform: translateY(-10px);
+    box-shadow: 0 1.25rem 3px #FFEEEB; /* Use secondary base color */
+  }
+
+  100% {
+    background-color: #03045d; /* Return to secondary color */
+    transform: translateY(0);
+    box-shadow: 0 3px 3px #FFEEEB; /* Use secondary base color */
+  }
+}
